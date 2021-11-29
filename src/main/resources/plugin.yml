@@ -1,0 +1,4 @@
+name: SpigotJDATest
+version: '${project.version}'
+main: org.itzsave.SpigotJDA
+api-version: 1.17
