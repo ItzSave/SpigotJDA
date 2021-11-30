@@ -1,5 +1,6 @@
 package discord;
 
+import discord.commands.WebsiteCommand;
 import jdk.internal.org.jline.reader.ConfigurationPath;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -18,6 +19,7 @@ public class DiscordBot extends ListenerAdapter {
         SpigotJDA plugin = SpigotJDA.getPlugin(SpigotJDA.class);
         JDA jda = JDABuilder.createDefault(plugin.getConfig().getString("settings.discord-bot-token"))
                 .setActivity(Activity.playing("Now running on Spigot!"))
+                .addEventListeners(new WebsiteCommand())
                 .setStatus(OnlineStatus.DO_NOT_DISTURB)
                 .build();
 
